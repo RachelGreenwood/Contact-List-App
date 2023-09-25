@@ -29,4 +29,21 @@ app.get('/contacts', async (req, res) => {
     }
 });
 
+app.post("/contacts", async (req, res) => {
+    try {
+      console.log("In the server", req.body);
+      const { name, email, phone, notes } = req.body;
+      const result = await db.query(
+        "INSERT INTO contacts (name, email, phone, notes) VALUES ($1, $2, $3, $4) RETURNING *",
+          [name, email, phone, notes]
+      );
+      let dbResponse = result.rows[0];
+      console.log(dbResponse);
+      res.json(dbResponse);
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({err});
+    }
+  });
+
 app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
