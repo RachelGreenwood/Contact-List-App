@@ -19,6 +19,9 @@ function Contacts() {
 
     return (
         <div>
+            {contacts.map((contact) => (
+                <div key={contact.id}>{contact.name}{contact.email}{contact.phone}{contact.notes}</div>
+            ))}
         </div>
     )
 }
