@@ -1,5 +1,6 @@
 import './App.css';
 import Contacts from './components/contacts.jsx';
+import CreateContact from './components/create-contact';
 
 function App() {
   return (
