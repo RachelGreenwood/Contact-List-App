@@ -22,7 +22,7 @@ function CreateContact(props) {
                 <label>Email: </label>
                 <input type='text' ref={userEmail}></input>
                 <label>Phone Number: </label>
-                <input type='number' ref={userPhone} required></input>
+                <input type='tel' ref={userPhone} required></input>
                 <label>Notes: </label>
                 <input type='text' ref={userNotes}></input>
                 <button type='submit'>Submit</button>
