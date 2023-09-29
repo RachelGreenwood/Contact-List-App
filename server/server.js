@@ -46,4 +46,24 @@ app.post("/contacts", async (req, res) => {
     }
   });
 
+  app.put("/contacts/:id", async (req, res) => {
+    try {
+      const userId = req.params.id;
+      const { name, email, phone, notes } = req.body;
+      const result = await db.query(
+        "UPDATE contacts SET name = $1, email = $2, phone = $3, notes = $4 WHERE id = $5 RETURNING *",
+        [name, email, phone, notes, userId]
+      );
+      if (result.rows.length === 0) {
+        return res.status(404).json({ error: "User not found" });
+      }
+      let updatedContact = result.rows[0];
+      console.log(updatedContact);
+      res.json(updatedContact);
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ err });
+    }
+  })
+
 app.listen(PORT, () => console.log(`Hola! Server running on Port http://localhost:${PORT}`));
