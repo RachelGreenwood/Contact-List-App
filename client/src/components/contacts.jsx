@@ -20,7 +20,8 @@ function Contacts() {
   }, []);
 
   const showDeets = (contact) => {
-    setSelectedContact(contact);
+     setSelectedContact(contact);
+    console.log("here, ", selectedContact);
   }
 
   const handlePostRequest = (data) => {

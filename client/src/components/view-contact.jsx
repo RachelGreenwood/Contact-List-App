@@ -18,13 +18,6 @@ function ViewContact(props) {
         setEditedContact({...editedContact, [name]: value})
     }
 
-    // const handleSaveClick = () => {
-    //     const eventtimeString = moment(editedEvent.eventtime).format('YYYY-MM-DDTHH:mm');
-    //     setEditedEvent({...editedEvent, eventtime: eventtimeString})
-    //     props.onSave(editedEvent);
-    //     setIsEditing(false);
-    // }
-
     const handleEditContact = () => {
         setEditedContact({...editedContact})
         fetch(`http://localhost:8080/contacts/${editedContact.id}`, {
@@ -36,7 +29,6 @@ function ViewContact(props) {
         })
         .then((response) => response.json())
         .then(() => {
-            //getRequest()
             setIsEditing(false);
         })
         .catch((err) => {

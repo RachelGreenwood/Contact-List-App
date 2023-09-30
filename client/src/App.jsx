@@ -5,7 +5,7 @@ import CreateContact from './components/create-contact';
 function App() {
   return (
     <div>
-      <h1>Hello World!</h1>
+      <h1>Say Hello, World!</h1>
       <Contacts />
     </div>
   )

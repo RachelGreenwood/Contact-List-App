@@ -2,7 +2,7 @@
 <!-- Insert logo here -->
 
 # Overview
-Contact List is an application that shows users their contacts, allows them to find details on those contacts, and add and save new contacts.
+Say Hello, World is an application that shows users their contacts, allows them to find details on those contacts, and add and save new contacts.
 <!-- Link to hosted app site, example syntax below -->
 <!-- > https://whatsinmyfridgeapp.herokuapp.com/ -->
 
