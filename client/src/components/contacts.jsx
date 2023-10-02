@@ -43,7 +43,7 @@ function Contacts() {
             {contacts.map((contact) => (
                 <div key={contact.id}><button onClick={() => showDeets(contact)}>{contact.name}</button></div>
             ))}
-            {selectedContact && <ViewContact contact={selectedContact} />}
+            {selectedContact && <ViewContact contact={selectedContact} getRequest={getRequest} />}
             <CreateContact submit={handlePostRequest} />
         </div>
     )

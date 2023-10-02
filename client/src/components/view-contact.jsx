@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function ViewContact(props) {
     const { contact } = props;
@@ -35,6 +35,10 @@ function ViewContact(props) {
             console.error("Error updating contact: ", err);
         })
     }
+
+    useEffect(() => {
+        setEditedContact(contact);
+    }, [contact]);
 
     return (
         <div>
